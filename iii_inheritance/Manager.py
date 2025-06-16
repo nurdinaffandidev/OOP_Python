@@ -1,4 +1,4 @@
-from inheritance.Employee import Employee
+from iii_inheritance.Employee import Employee
 
 class Manager(Employee):
     # constructor

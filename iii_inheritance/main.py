@@ -1,6 +1,6 @@
-from inheritance.Developer import Developer
-from inheritance.Employee import Employee
-from inheritance.Manager import Manager
+from iii_inheritance.Developer import Developer
+from iii_inheritance.Employee import Employee
+from iii_inheritance.Manager import Manager
 
 # Main runner
 dev_1 = Developer('John', 'Doe', 1000, 'python')

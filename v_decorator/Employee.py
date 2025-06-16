@@ -4,7 +4,7 @@ class Employee:
         self.first_name = first_name
         self.last_name = last_name
         self.pay = pay
-        # self.email = first_name + "." + last_name + "@company.com"
+        # self.email = first_name + "." + last_name + "@company.com" # commented out to allow email computed dynamically via first_name, last_name
 
     @property
     def fullname(self) -> str:
@@ -37,6 +37,7 @@ emp_1.first_name = "Sam"
 print(emp_1.first_name)
 print(emp_1.fullname)
 print(emp_1.email)
+print()
 
 emp_1.fullname = "Jackson Wang" # w/o setter this will result in AttributeError: property 'fullname' of 'Employee' object has no setter
 
@@ -44,6 +45,7 @@ print(emp_1.fullname)
 print(emp_1.first_name)
 print(emp_1.last_name)
 print(emp_1.email)
+print()
 
 del emp_1.fullname
 print(emp_1.first_name)

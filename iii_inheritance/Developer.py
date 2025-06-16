@@ -1,4 +1,4 @@
-from inheritance.Employee import Employee
+from iii_inheritance.Employee import Employee
 
 class Developer(Employee):
     raise_amount = 1.10 # this overrides parent raise_amount
