@@ -6,7 +6,7 @@ class Employee:
         self.pay = pay
         # self.email = first_name + "." + last_name + "@company.com" # commented out to allow email computed dynamically via first_name, last_name
 
-    @property
+    @property # @property turns a method into a read-only attribute.
     def fullname(self) -> str:
         return f"{self.first_name} {self.last_name}"
 

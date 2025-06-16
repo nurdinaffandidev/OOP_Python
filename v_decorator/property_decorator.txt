@@ -1,0 +1,88 @@
+### ✅ `@property` in Python: What It Is and Why Use It
+
+The `@property` decorator in Python allows you to define getter methods that can be accessed like regular attributes,
+providing a clean and Pythonic way to manage class properties.
+
+---
+
+### 🧠 Basic Concept
+
+```python
+class Person:
+    def __init__(self, first_name):
+        self._first_name = first_name
+
+    @property
+    def first_name(self):
+        return self._first_name
+```
+
+Now:
+
+```python
+p = Person("Alice")
+print(p.first_name)   # Looks like attribute, but calls a method
+```
+
+> `@property` turns a method into a read-only attribute.
+
+---
+
+### 🔧 Why Use `@property`?
+
+* Control read/write access to attributes
+* Add validation or logic while keeping the interface simple
+* Make attributes computed on the fly
+
+---
+
+### 🔄 Add a Setter and Deleter
+
+```python
+class Person:
+    def __init__(self, name):
+        self._name = name
+
+    @property
+    def name(self):
+        return self._name
+
+    @name.setter
+    def name(self, value):
+        if not value:
+            raise ValueError("Name cannot be empty")
+        self._name = value
+
+    @name.deleter
+    def name(self):
+        print("Deleting name")
+        self._name = None
+```
+
+Usage:
+
+```python
+p = Person("Bob")
+p.name = "Alice"      # Calls setter
+del p.name            # Calls deleter
+```
+
+---
+
+### 📌 Summary Table
+
+| Feature        | Decorator    | Purpose                   |
+| -------------- | ------------ | ------------------------- |
+| Read (getter)  | `@property`  | Get value like attribute  |
+| Write (setter) | `@x.setter`  | Set value with logic      |
+| Delete         | `@x.deleter` | Delete value with control |
+
+---
+
+### ✅ When to Use
+
+Use `@property` when:
+
+* You want to compute a value dynamically.
+* You want to expose an attribute but add logic (e.g. validation, caching).
+* You want to preserve API while changing internals.
